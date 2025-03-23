@@ -1,0 +1,13 @@
+name: Issues Opener Alert
+
+on:
+    issues:
+      types: [opened]
+
+jobs:
+    issue-opened:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Testing task
+          run: echo "Job was opened"

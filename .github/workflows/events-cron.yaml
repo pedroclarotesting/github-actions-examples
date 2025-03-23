@@ -1,0 +1,13 @@
+name: Weekly Cron Job
+
+on:
+    schedule:
+        - cron: "5 23 * * 0" # 11:05 pm on sunday in Portugal
+
+jobs:
+    run-cron-job:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Testing task
+          run: echo "Cron Job tested"

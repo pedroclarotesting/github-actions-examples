@@ -1,4 +1,4 @@
-name: Weekly Cron Job
+name: Issues Opener Alert
 
 on:
     issues:

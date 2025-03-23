@@ -2,7 +2,7 @@ name: Weekly Cron Job
 
 on:
     schedule:
-        - cron: "* 23 * * 0" # every minute at 11pm on sunday in Portugal
+        - cron: '* 23 * * 0' # every minute at 11pm on sunday in Portugal
 
 jobs:
     run-cron-job:

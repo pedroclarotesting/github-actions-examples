@@ -13,7 +13,7 @@ Testing GitHub secrets
 
 |workflow |description | outcome|
 | --- | --- | --- |
-|.github/workflows/secrets-if.yaml| Tests if secret is "known"| Secret was imported; comparisons with strings from secrets do not work|
+|secrets-if.yaml| Tests if secret is "known"| Secret was imported; comparisons with strings from secrets do not work|
 
 ### Events
 
@@ -21,4 +21,5 @@ Testing different types of events
 
 |workflow |description | outcome|
 | --- | --- | --- |
-|
+|events-cron.yaml |alerts every minute between 11pm and midnight on sunday| works :)|
+|events-issues.yaml|alerts on new issues| This type of event works only on main branch, not sure why yet|

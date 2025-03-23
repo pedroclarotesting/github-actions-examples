@@ -1,0 +1,33 @@
+name: Testing Matrix OS and nodes combinations
+
+on:
+  push:
+    branches:
+      - matrix
+
+jobs:
+  matrix-test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node-version: [14, 16]
+        include:
+          - favorite: this-one
+            os: macos-latest
+        exclude:
+          - node-version: 14
+            os: 
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Printing combinations
+        run: echo "Running on ${{ matrix.node-version }} with Node.js ${{ matrix.node-version }}" 
+      
+      - name: Checking if macos
+        run: echo "MacOS is my favorite:)"
+        if: ${{ matrix.favorite }}
+        

@@ -11,10 +11,14 @@ Organized by branches
 
 Testing GitHub secrets
 
-|workflow |description |
-| --- | --- |
-|.github/workflows/secrets| Tests if secret is "known"
+|workflow |description | outcome|
+| --- | --- | --- |
+|.github/workflows/secrets-if.yaml| Tests if secret is "known"| Secret was imported; comparisons with strings from secrets do not work|
 
 ### Events
 
 Testing different types of events
+
+|workflow |description | outcome|
+| --- | --- | --- |
+|

@@ -10,4 +10,4 @@ jobs:
 
         steps:
         - name: Testing task
-          run: echo "Test"
+          run: echo "Cron Job tested"

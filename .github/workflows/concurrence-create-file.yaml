@@ -1,0 +1,20 @@
+name: creates original file
+
+on:
+    push:
+        branches:
+            -concurrence
+jobs:
+    create-files:
+        runs-on: ubuntu-latest
+        concurrency:
+            group: "file-modifier"
+            cancel-in-progress: false # waits to do something
+        steps:
+            - uses: actions/checkout@v2
+            - run: touch file.txt
+            - name: upload file as artifact
+              uses: actions/upload-artifact@v3
+              with:
+                name: file
+                path: file.txt

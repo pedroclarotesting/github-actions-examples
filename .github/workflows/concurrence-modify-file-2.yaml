@@ -17,6 +17,10 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                 name: file
+                github-token: ${{ secrets.GH_PAT }}
+                repository: ${{ github.repository }}
+                run-id: ${{ github.event.workflow_run.id }}
+
 
             - name: modify file
               run: echo "The second modifier!" >> file.txt

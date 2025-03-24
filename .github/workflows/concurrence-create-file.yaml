@@ -4,6 +4,8 @@ on:
     push:
         branches:
             - concurrence
+    workflow_dispatch:
+
 jobs:
     create-files:
         runs-on: ubuntu-latest

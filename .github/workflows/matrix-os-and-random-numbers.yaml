@@ -1,4 +1,4 @@
-name: Testing Matrix OS and nodes combinations
+name: Testing Matrix OS and Random Numbers combinations
 
 on:
   push:

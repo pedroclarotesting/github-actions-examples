@@ -4,6 +4,7 @@ on:
     push:
         branches:
             - concurrence
+            - main
     workflow_dispatch:
 
 jobs:

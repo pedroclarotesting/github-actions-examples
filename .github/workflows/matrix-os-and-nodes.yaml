@@ -1,0 +1,28 @@
+name: Testing Matrix OS and nodes combinations
+
+on:
+  push:
+    branches:
+      - matrix
+
+jobs:
+  matrix-test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        i: [1, 2]
+        include:
+          - favorite: this-one
+            os: macos-latest
+        exclude:
+          - i: 1
+            os: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Printing combinations
+        run: echo "Running on ${{ matrix.os }} with random number ${{ matrix.i }}" 
+      
+      - name: Checking if macos
+        run: echo "MacOS is my favorite:)"
+        if: ${{ matrix.favorite }}
+        

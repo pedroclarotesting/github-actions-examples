@@ -3,7 +3,7 @@ name: creates original file
 on:
     push:
         branches:
-            -concurrence
+            - concurrence
 jobs:
     create-files:
         runs-on: ubuntu-latest

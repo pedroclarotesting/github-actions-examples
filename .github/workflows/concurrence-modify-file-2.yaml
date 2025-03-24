@@ -1,0 +1,28 @@
+name: modifying file (second agent)
+
+on:
+    workflow_run:
+        workflows: ["creates original file"]
+        types:
+            - completed
+jobs:
+    modify-file-2:
+        runs-on: ubuntu-latest
+        concurrency:
+            group: "file-modifier"
+            cancel-in-progress: false
+        steps:
+            - uses: actions/checkout@v2
+            - name: downloads artifact
+              uses: actions/download-artifact@v3
+              with:
+                name: file
+
+            - name: modify file
+              run: echo "The second modifier!" >> file.txt
+
+            - name: upload file as artifact
+              uses: actions/upload-artifact@v3
+              with:
+                name: file
+                path: file.txt
